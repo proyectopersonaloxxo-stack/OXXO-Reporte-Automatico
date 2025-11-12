@@ -8,7 +8,7 @@ import json
 # --- CONFIGURACIÓN DE TU SERVIDOR Y CORREO ---
 # ¡IMPORTANTE! Reemplaza estos datos con tu correo y tu contraseña de aplicación.
 SMTP_SERVER = 'smtp.gmail.com' # Si usas Gmail
-SMTP_PORT = 587
+SMTP_PORT = 587  # Cambio para forzar despliegue
 SENDER_EMAIL = 'proyectopersonaloxxo@gmail.com' # TU CORREO
 SENDER_PASSWORD = 'ekqrzjokpydqejrm' # TU CONTRASEÑA DE APLICACIÓN
 
@@ -71,3 +71,4 @@ if __name__ == '__main__':
     
     # host='0.0.0.0' permite que Render se conecte
     app.run(host='0.0.0.0', port=port, debug=False)
+
