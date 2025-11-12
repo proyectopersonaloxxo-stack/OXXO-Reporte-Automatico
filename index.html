@@ -242,7 +242,7 @@
 
             // 5. Conexión con el servidor Python
             try {
-                const respuesta = await fetch('http://localhost:5000/enviar-reporte', {
+                const SERVER_URL_BASE = 'https://oxxo-reporte-automatico.onrender.com';/enviar-reporte', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(datosDelReporte)
@@ -291,4 +291,5 @@
         };
     </script>
 </body>
+
 </html>
