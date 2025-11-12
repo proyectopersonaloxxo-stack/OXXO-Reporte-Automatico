@@ -1,6 +1,7 @@
+import os  # ¡ESTA LÍNEA ES CLAVE!
 import smtplib
 from email.mime.text import MIMEText
-from email.header import Header
+from email.mime.multipart import MIMEMultipart
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import json
@@ -66,9 +67,10 @@ if __name__ == '__main__':
     
     print("\n==================================================")
     print("🚀 SERVIDOR PYTHON (FLASK) INICIADO")
-    print(f"📡 Escuchando en: http://0.0.0.0:{port}") # Notar 0.0.0.0 aquí
+    print(f"📡 Escuchando en: http://0.0.0.0:{port}") 
     print("==================================================")
     
     # host='0.0.0.0' permite que Render se conecte
     app.run(host='0.0.0.0', port=port, debug=False)
+
 
