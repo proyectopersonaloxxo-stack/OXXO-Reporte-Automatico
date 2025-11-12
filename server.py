@@ -56,9 +56,18 @@ def enviar_reporte():
         print(f"❌ Error al procesar o enviar el correo: {e}")
         return jsonify({'success': False, 'error': str(e)}), 500
 
+# -----------------------------------------------------------------------------
+# 4. INICIO DEL SERVIDOR (LISTO PARA RENDER)
+# -----------------------------------------------------------------------------
 if __name__ == '__main__':
-    print("==================================================")
+    # Render (nube) asignará un puerto en la variable 'PORT'.
+    # Si 'PORT' no existe (porque estamos en la PC local), usará 5000.
+    port = int(os.environ.get('PORT', 5000))
+    
+    print("\n==================================================")
     print("🚀 SERVIDOR PYTHON (FLASK) INICIADO")
-    print("📡 Escuchando en: http://127.0.0.1:5000")
+    print(f"📡 Escuchando en: http://0.0.0.0:{port}") # Notar 0.0.0.0 aquí
     print("==================================================")
-    app.run(debug=True, port=5000)
+    
+    # host='0.0.0.0' permite que Render se conecte
+    app.run(host='0.0.0.0', port=port, debug=False)
